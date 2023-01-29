@@ -2,7 +2,12 @@
   display: none;
 }
 
-#error-message {
-  font-weight: 600; 
-  color: red;
-}
+body {
+  background-color:rgb(177, 240, 201);
+  }
+
+  h1 {
+    font-size: 400%;
+    text-align: left;
+    font-style: italic;
+  }
