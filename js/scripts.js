@@ -44,5 +44,8 @@ window.addEventListener("load", function () {
     document.getElementById("colorInput").value = "";
     document.getElementById("hairInput").value = "";
     document.getElementById("mathInput").value = "";
+    document.getElementById("java").setAttribute("class", "hidden")
+    document.getElementById("python").setAttribute("class", "hidden")
+    document.getElementById("ruby").setAttribute("class", "hidden")
   });
 });
