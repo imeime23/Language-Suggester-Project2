@@ -1,6 +1,5 @@
 window.addEventListener("load", function () {
   let form = document.querySelector("form");
-  let resetBtn = document.getElementById("reset");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -13,39 +12,44 @@ window.addEventListener("load", function () {
     const colorFieldValue = document.getElementById("colorInput").value;
     const mathFieldValue = document.getElementById("mathInput").value;
 
+    if (
+      age == "" ||
+      height == "" ||
+      hairFieldValue == "" ||
+      colorFieldValue == "" ||
+      mathFieldValue == ""
+    ) {
+      document.getElementById("result").setAttribute("class", "hidden");
+      return;
+    }
+
     if (age >= 25 && height >= 60) {
-      document.getElementById("java").removeAttribute("class");
-    } else if (age <= 24 && height <= 59) {
-      document.getElementById("python").removeAttribute("class");
-      //if the age is less than or equal to 15 or the user likes blue/black/red/pink then learn ruby
+      console.log("js");
+      document.getElementById("language").innerHTML = "JavaScript";
+      document.getElementById("result").removeAttribute("class");
     } else if (
-      age <= 15 ||
-      colorFieldValue == "blue" ||
-      colorFieldValue == "black" ||
+      (age <= 24 && height <= 59) ||
       colorFieldValue == "red" ||
       colorFieldValue == "pink" ||
       hairFieldValue == "blonde" ||
       mathFieldValue == "yes"
     ) {
-      document.getElementById("ruby").removeAttribute("class");
+      console.log("Python");
+      document.getElementById("language").innerHTML = "Python";
+      document.getElementById("result").removeAttribute("class");
+    } else {
+      console.log("Ruby");
+      document.getElementById("language").innerHTML = "Ruby";
+      document.getElementById("result").removeAttribute("class");
     }
   });
 
   // new event listener for form submit event to show reset button
   form.addEventListener("submit", function () {
-    resetBtn.removeAttribute("class");
-  });
-
-  // new event listener for click event on reset button to
-  // reset form values
-  resetBtn.addEventListener("click", function () {
     document.getElementById("ageInput").value = "";
     document.getElementById("heightInput").value = "";
     document.getElementById("colorInput").value = "";
     document.getElementById("hairInput").value = "";
     document.getElementById("mathInput").value = "";
-    document.getElementById("java").setAttribute("class", "hidden")
-    document.getElementById("python").setAttribute("class", "hidden")
-    document.getElementById("ruby").setAttribute("class", "hidden")
   });
 });
