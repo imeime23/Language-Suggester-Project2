@@ -24,7 +24,7 @@ window.addEventListener("load", function () {
     }
 
     if (age >= 25 && height >= 60) {
-      console.log("js");
+      //console.log("js");
       document.getElementById("language").innerHTML = "JavaScript";
       document.getElementById("result").removeAttribute("class");
     } else if (
@@ -34,11 +34,11 @@ window.addEventListener("load", function () {
       hairFieldValue == "blonde" ||
       mathFieldValue == "yes"
     ) {
-      console.log("Python");
+      //console.log("Python");
       document.getElementById("language").innerHTML = "Python";
       document.getElementById("result").removeAttribute("class");
     } else {
-      console.log("Ruby");
+      //console.log("Ruby");
       document.getElementById("language").innerHTML = "Ruby";
       document.getElementById("result").removeAttribute("class");
     }
